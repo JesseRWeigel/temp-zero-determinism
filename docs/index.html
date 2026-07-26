@@ -60,8 +60,8 @@ font-size:14px;color:var(--ink3)}
     <a class="btn primary" href="https://github.com/JesseRWeigel/temp-zero-determinism">Source on GitHub</a>
   </div>
 </header>
-<p>Temperature 0 is not reproducible, and the reason is more interesting than floating point.</p>
-<p>Catalog task <code>EVAL-026</code>. 600 generations against a local model through Ollama.</p>
+<p>Temperature 0 is not reproducible, and the two backends tested fail for different reasons.</p>
+<p>Catalog task <code>EVAL-026</code>. 1,200 generations across two backends: a local model through Ollama and a hosted model through the Gemini API.</p>
 <p><strong><a href="https://jesserweigel.github.io/temp-zero-determinism/">Read this on the web</a></strong></p>
 <h2>The finding</h2>
 <p><strong>36% of prompts produced non-identical output across 8 repetitions at temperature 0.</strong> Identical request, identical model, greedy decoding, and one of the eight came back different.</p>
@@ -70,20 +70,25 @@ font-size:14px;color:var(--ink3)}
 concurrent  the same 9 prompts, odd index varies: 0,0,0,0,0, 1,1, 3,3
 seeded      the same 9 prompts, 36.0%. An explicit seed changes nothing.</code></pre>
 <p>Susceptibility is a property of the prompt. Timing decides which repetition differs.</p>
-<h2>Why: a cold path and a warm path, not noise</h2>
-<p>Ollama and llama.cpp cache the evaluated KV state of a prompt prefix. The first request computes it; an identical follow-up reuses it. The two routes reduce floating point sums in a different order, and greedy decoding turns a hair&#x27;s-breadth logit difference into a different token whenever two candidates are nearly tied. Once one token differs, the rest of the generation follows it.</p>
-<p><code>mechanism.py</code> tests this directly with three sequences:</p>
-<table><thead><tr><th>Sequence</th><th>Unique outputs</th><th>What it means</th></tr></thead><tbody><tr><td><code>repeat</code> A,A,A,A,A,A</td><td><strong>2</strong>, groups <code>[[1,2,3,4,5],[0]]</code></td><td>run 0 cold, runs 1-5 warm</td></tr><tr><td><code>interleaved</code> A,B,A,B,A,B</td><td><strong>1</strong>, all identical</td><td>a different prompt between each A evicts the cache, so every A is cold</td></tr><tr><td><code>reload</code> model unloaded between calls</td><td><strong>1</strong>, all identical</td><td>nothing can be cached, so every run is cold</td></tr></tbody></table>
-<p>This is exactly what caching predicts, and it reframes the result. Neither path is broken. The cold path is self-consistent and the warm path is self-consistent. <strong>Only a sequence that mixes the two produces divergence.</strong> Repeating a prompt is precisely such a sequence, which is why the naive reproducibility test is the one that fails.</p>
+<h2>Two backends, two different mechanisms</h2>
+<p>Adding a hosted backend changed the conclusion, and the change is the interesting part.</p>
+<table><thead><tr><th></th><th>Ollama, <code>gemma4:e4b</code></th><th>Gemini, <code>gemini-3-flash-preview</code></th></tr></thead><tbody><tr><td>Divergence rate</td><td>36%</td><td><strong>64%</strong></td></tr><tr><td>Unique outputs per diverged prompt</td><td>Always exactly <strong>2</strong></td><td><strong>2, 3, 4, and 5</strong></td></tr><tr><td>Is the odd run always the first?</td><td>Serial 9/9, seeded 9/9</td><td><strong>0 of 16, in every condition</strong></td></tr><tr><td>Rate with an explicit seed</td><td>36%, unchanged</td><td>64%, unchanged</td></tr></tbody></table>
+<p><strong>Ollama&#x27;s divergence is a two-state split and it is predictable.</strong> Every diverged prompt produced exactly two distinct outputs, and under serial requests the odd one out was the first repetition every single time. <code>mechanism.py</code> confirms why: repeating a prompt gives two outputs, interleaving a different prompt between repetitions gives one, and unloading the model between calls gives one. That is prefix KV caching. The cold path and the warm path are each internally consistent, and only a sequence mixing them diverges.</p>
+<p><strong>Gemini&#x27;s divergence is not that, at all.</strong> Eight byte-identical requests produced up to five distinct outputs, and the first-repetition signature is entirely absent: 0 of 16 diverged prompts in any condition. There is no two-state structure to find. This is what continuous nondeterminism looks like, and it is consistent with continuous batching on a shared server, where a request is batched with whatever else happens to be in flight, so the reduction order differs on every call rather than between two states.</p>
+<p>So the caching explanation is correct for the local backend and <strong>does not generalise</strong>. An earlier version of this README said &quot;only a sequence that mixes the two produces divergence&quot;. That is true of Ollama and false of Gemini, where repeated identical requests scatter. The honest conclusion is stronger than the original one:</p>
+<blockquote><p>Temperature 0 is not reproducible on either backend. The local one fails in a predictable, explainable way that you can work around. The hosted one fails continuously, at nearly twice the rate, and there is nothing on the client side to work around it with.</p></blockquote>
+<p>An explicit seed changes nothing on either, which makes sense: seeding controls sampling, and greedy decoding has no sampling to control.</p>
 <h2>What to do about it</h2>
-<ol><li><strong>Discard the first generation</strong> if you need a reproducible sequence, or warm the cache</li></ol>
-<p>   before you start measuring.</p>
-<ol><li><strong>Do not compare a cold run against a warm run.</strong> An eval that runs each prompt once,</li></ol>
-<p>   fresh, is internally consistent. An eval that repeats prompts is not, unless it    normalizes for cache state.</p>
-<ol><li><strong>A seed will not save you.</strong> Seeding is about sampling, and at temperature 0 there is no</li></ol>
-<p>   sampling to control. Measured: identical 36% with and without.</p>
-<ol><li><strong>Short answers hide this.</strong> Every diverged prompt was a long generation (640 to 940</li></ol>
-<p>   characters, all arithmetic or code). Short factual answers never diverged in 80 runs,    because a near-tied argmax needs room to propagate before it changes anything visible.</p>
+<ol><li><strong>Do not assume a hosted API is more deterministic than a local one.</strong> It was worse here, 64%</li></ol>
+<p>   against 36%, and unlike the local case there was no pattern to exploit.</p>
+<ol><li><strong>On a local backend, discard the first generation</strong> or warm the cache before measuring. That</li></ol>
+<p>   removes the entire effect, because the effect is one cold run among warm ones.</p>
+<ol><li><strong>On a hosted backend, budget for it.</strong> If an eval needs a stable answer, run the prompt</li></ol>
+<p>   several times and take a majority, or accept that a single call is a sample rather than a    measurement.</p>
+<ol><li><strong>Never compare a cold run against a warm run</strong> on a local backend. An eval that runs each</li></ol>
+<p>   prompt once, fresh, is internally consistent. One that repeats prompts is not.</p>
+<ol><li><strong>A seed will not save you.</strong> Measured identical with and without, on both backends.</li><li><strong>Short answers hide all of this.</strong> Every diverged prompt was a long generation. Short</li></ol>
+<p>   factual answers never diverged in 80 local runs, because a near-tied argmax needs room to    propagate before it changes anything visible.</p>
 <h2>By prompt family</h2>
 <p>Diverged prompts, identical across all three conditions:</p>
 <table><thead><tr><th>Family</th><th>Diverged</th><th>Total</th></tr></thead><tbody><tr><td>code</td><td>5</td><td>5</td></tr><tr><td>arithmetic</td><td>4</td><td>10</td></tr><tr><td>short_factual</td><td>0</td><td>10</td></tr></tbody></table>
@@ -97,8 +102,8 @@ python3 mechanism.py --prompts math-04,code-05 --reps 6</code></pre>
 <h2>What this does not show</h2>
 <ul><li><strong>One model, one backend.</strong> <code>gemma4:e4b</code> through Ollama. The mechanism is a property of</li></ul>
 <p>  prefix caching rather than of this model, so it should generalize, but that is an   argument and not a measurement. Testing llama.cpp directly and HF <code>transformers</code> would   make the claim much stronger and is the obvious next step.</p>
-<ul><li><strong>25 prompts, 8 repetitions.</strong> Enough to establish the pattern, which is unusually clean</li></ul>
-<p>  because all three conditions agree exactly, and not enough for a precise rate. Read 36%   as &quot;roughly a third of long generations&quot; rather than as a calibrated number.</p>
+<ul><li><strong>25 prompts, 8 repetitions per condition.</strong> Enough to establish the patterns, which are</li></ul>
+<p>  unusually clean because all three conditions agree exactly on both backends, and not enough   for precise rates. Read 36% and 64% as &quot;about a third&quot; and &quot;about two thirds&quot; of long   generations rather than as calibrated numbers.</p>
 <ul><li><strong>The divergence is measured in characters, not tokens.</strong> The API does not return token</li></ul>
 <p>  ids, and inferring them would add a tokenizer whose version could itself drift.</p>
 <ul><li><strong><code>num_predict</code> was 250.</strong> Longer generations plausibly diverge more often, since there</li></ul>
