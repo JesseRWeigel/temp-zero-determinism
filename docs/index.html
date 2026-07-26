@@ -62,6 +62,7 @@ font-size:14px;color:var(--ink3)}
 </header>
 <p>Temperature 0 is not reproducible, and the reason is more interesting than floating point.</p>
 <p>Catalog task <code>EVAL-026</code>. 600 generations against a local model through Ollama.</p>
+<p><strong><a href="https://jesserweigel.github.io/temp-zero-determinism/">Read this on the web</a></strong></p>
 <h2>The finding</h2>
 <p><strong>36% of prompts produced non-identical output across 8 repetitions at temperature 0.</strong> Identical request, identical model, greedy decoding, and one of the eight came back different.</p>
 <p>The shape of that divergence is the actual result. Random floating point nondeterminism would scatter outputs across many variants. This does not. In every diverged case there are <strong>exactly two distinct outputs</strong>, and in serial requests the odd one out is <strong>always the first repetition</strong>:</p>

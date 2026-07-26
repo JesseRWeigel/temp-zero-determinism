@@ -4,6 +4,8 @@ Temperature 0 is not reproducible, and the reason is more interesting than float
 
 Catalog task `EVAL-026`. 600 generations against a local model through Ollama.
 
+**[Read this on the web](https://jesserweigel.github.io/temp-zero-determinism/)**
+
 ## The finding
 
 **36% of prompts produced non-identical output across 8 repetitions at temperature 0.**
