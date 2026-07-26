@@ -1,0 +1,10 @@
+  serial: 25 prompts x 8 reps
+    16/25 prompts diverged (64.0%) in 471.9s
+  concurrent: 25 prompts x 8 reps
+    16/25 prompts diverged (64.0%) in 123.9s
+  seeded: 25 prompts x 8 reps
+    16/25 prompts diverged (64.0%) in 475.7s
+wrote raw/gemini_flash.json
+serial       64.0% of prompts diverged
+concurrent   64.0% of prompts diverged
+seeded       64.0% of prompts diverged
