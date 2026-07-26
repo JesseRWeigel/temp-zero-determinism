@@ -34,8 +34,61 @@ OLLAMA = "http://localhost:11434"
 HERE = pathlib.Path(__file__).resolve().parent
 
 
+GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+
+# A hosted API is a genuinely different backend: different hardware, different serving
+# stack, its own batching. Testing it says whether the prefix-cache explanation generalises
+# or is specific to how Ollama and llama.cpp keep state between requests. It needs no
+# download, which matters on a box at 84% disk.
+GEMINI_MODELS = {"gemini-flash", "gemini-lite", "gemini-pro"}
+_GEMINI_IDS = {
+    "gemini-flash": "gemini-3-flash-preview",
+    "gemini-lite": "gemini-3.1-flash-lite",
+    "gemini-pro": "gemini-3.1-pro-preview",
+}
+
+
+def generate_gemini(model, prompt, seed=None, num_predict=200):
+    """One completion at temperature 0 through the Gemini API."""
+    import os
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        return "", None, "GEMINI_API_KEY not set"
+    cfg = {
+        "temperature": 0.0,
+        # Gemini 3 spends reasoning tokens out of maxOutputTokens, so a bare budget of
+        # num_predict can return an empty string with finishReason MAX_TOKENS.
+        "maxOutputTokens": num_predict + 2048,
+        "thinkingConfig": {"thinkingLevel": "low"},
+    }
+    if seed is not None:
+        cfg["seed"] = seed
+    payload = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}
+    model_id = _GEMINI_IDS.get(model, model)
+    req = urllib.request.Request(
+        f"{GEMINI_BASE}/{model_id}:generateContent?key={key}",
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=600) as r:
+            d = json.loads(r.read().decode())
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+        return "", None, str(e)[:200]
+    if "error" in d:
+        return "", None, str(d["error"].get("message", ""))[:200]
+    cand = (d.get("candidates") or [{}])[0]
+    parts = cand.get("content", {}).get("parts", [])
+    text = "".join(x.get("text", "") for x in parts if not x.get("thought"))
+    used = d.get("usageMetadata", {}).get("candidatesTokenCount")
+    if not text:
+        return "", used, f"empty response (finishReason={cand.get('finishReason')})"
+    return text, used, None
+
+
 def generate(model, prompt, seed=None, num_predict=200, keep_alive="5m"):
     """One completion at temperature 0. Returns (text, eval_count, error)."""
+    if model in GEMINI_MODELS or model.startswith("gemini"):
+        return generate_gemini(model, prompt, seed, num_predict)
     opts = {"temperature": 0.0, "num_predict": num_predict}
     if seed is not None:
         opts["seed"] = seed
@@ -53,7 +106,15 @@ def generate(model, prompt, seed=None, num_predict=200, keep_alive="5m"):
 
 
 def unload(model):
-    """keep_alive 0 evicts the model, so the next call reallocates from scratch."""
+    """Evict a local model so the next call reallocates from scratch.
+
+    keep_alive 0 is what does it. For a hosted model there is nothing local to evict and
+    an eviction request would just burn an API call, so this returns without one. That
+    also means the `reload` condition is meaningless for Gemini, which the runner states
+    rather than silently running a condition that measures nothing.
+    """
+    if model in GEMINI_MODELS or model.startswith("gemini"):
+        return
     generate(model, "x", num_predict=1, keep_alive="0")
     time.sleep(1.5)
 
