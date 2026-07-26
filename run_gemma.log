@@ -1,0 +1,10 @@
+  serial: 25 prompts x 8 reps
+    9/25 prompts diverged (36.0%) in 284.4s
+  concurrent: 25 prompts x 8 reps
+    9/25 prompts diverged (36.0%) in 300.7s
+  seeded: 25 prompts x 8 reps
+    9/25 prompts diverged (36.0%) in 293.4s
+wrote raw/gemma4_e4b.json
+serial       36.0% of prompts diverged
+concurrent   36.0% of prompts diverged
+seeded       36.0% of prompts diverged

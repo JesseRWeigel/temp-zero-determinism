@@ -1,0 +1,168 @@
+{
+ "meta": {
+  "model": "gemma4:e4b",
+  "reps": 6,
+  "num_predict": 250,
+  "prompts": [
+   "math-04",
+   "code-05"
+  ],
+  "generated_at": "2026-07-26T00:22:28"
+ },
+ "results": {
+  "math-04": {
+   "summary": {
+    "repeat": {
+     "unique_outputs": 2,
+     "groups": [
+      [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      [
+       0
+      ]
+     ],
+     "first_is_alone": true,
+     "all_identical": false
+    },
+    "interleaved": {
+     "unique_outputs": 1,
+     "groups": [
+      [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     ],
+     "first_is_alone": false,
+     "all_identical": true
+    },
+    "reload": {
+     "unique_outputs": 1,
+     "groups": [
+      [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     ],
+     "first_is_alone": false,
+     "all_identical": true
+    }
+   },
+   "raw": {
+    "repeat": [
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n   Since we multiplied by $0.17$ (two decimal places), we place the decimal point two places from the right:\n   $$144.50$$\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can break 17% into $10\\% + 7",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n   Since we multiplied by $0.17$ (two decimal places), we place the decimal point two places from the right:\n   $$144.50$$\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can break 17% into $10\\% + 7",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n   Since we multiplied by $0.17$ (two decimal places), we place the decimal point two places from the right:\n   $$144.50$$\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can break 17% into $10\\% + 7",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n   Since we multiplied by $0.17$ (two decimal places), we place the decimal point two places from the right:\n   $$144.50$$\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can break 17% into $10\\% + 7",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n   Since we multiplied by $0.17$ (two decimal places), we place the decimal point two places from the right:\n   $$144.50$$\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can break 17% into $10\\% + 7"
+    ],
+    "interleaved": [
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together."
+    ],
+    "reload": [
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together.",
+     "Here are a couple of ways to calculate 17% of 850:\n\n### Method 1: Converting the Percentage to a Decimal\n\n1. **Convert the percentage to a decimal:** Divide the percentage by 100.\n   $$17\\% = \\frac{17}{100} = 0.17$$\n\n2. **Multiply the decimal by the number:**\n   $$0.17 \\times 850$$\n\n   $$\\begin{array}{c} \\phantom{0}850 \\\\ \\times \\quad 0.17 \\\\ \\hline \\phantom{0}5950 \\quad (7 \\times 850) \\\\ + 8500 \\quad (10 \\times 850) \\\\ \\hline 14450 \\end{array}$$\n\n3. **Place the decimal point:** Since you multiplied by $0.17$ (two decimal places), the answer is **144.5**.\n\n---\n\n### Method 2: Using Fractions (Breaking Down the Percentage)\n\nYou can calculate 10% and 7% separately and add them together."
+    ]
+   }
+  },
+  "code-05": {
+   "summary": {
+    "repeat": {
+     "unique_outputs": 2,
+     "groups": [
+      [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      [
+       0
+      ]
+     ],
+     "first_is_alone": true,
+     "all_identical": false
+    },
+    "interleaved": {
+     "unique_outputs": 1,
+     "groups": [
+      [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     ],
+     "first_is_alone": false,
+     "all_identical": true
+    },
+    "reload": {
+     "unique_outputs": 1,
+     "groups": [
+      [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     ],
+     "first_is_alone": false,
+     "all_identical": true
+    }
+   },
+   "raw": {
+    "repeat": [
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n### Explanation and Assumptions:\n\nThis query assumes you have at least two tables: `Customers` and `Orders`.\n\n1.  **`Customers` Table:**\n    *   Must contain customer identification information (e.g., `customer_id`, `customer_name`).\n2.  **`Orders` Table:**\n    *   Must contain order details, including a foreign key linking to the customer (`customer_id`).\n    *   It should also contain the necessary columns to calculate the value of an item in an order (e.g., `quantity` and `price`).\n\n### Breakdown of the Query:\n\n*   **`SELECT c.customer_id, c.",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n### Explanation and Assumptions:\n\nThis query assumes you have at least two tables: `Customers` and `Orders`.\n\n1.  **`Customers` Table:**\n    *   Must contain customer identification information (e.g., `customer_id`, `customer_name`).\n2.  **`Orders` Table:**\n    *   Must contain order details, including a foreign key linking to the customer (`customer_id`).\n    *   It should also contain the necessary columns to calculate the value of an item in an order (e.g., `quantity` and `price`).\n\n### Breakdown of the Query:\n\n*   **`SELECT c.customer_id, c.",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n### Explanation and Assumptions:\n\nThis query assumes you have at least two tables: `Customers` and `Orders`.\n\n1.  **`Customers` Table:**\n    *   Must contain customer identification information (e.g., `customer_id`, `customer_name`).\n2.  **`Orders` Table:**\n    *   Must contain order details, including a foreign key linking to the customer (`customer_id`).\n    *   It should also contain the necessary columns to calculate the value of an item in an order (e.g., `quantity` and `price`).\n\n### Breakdown of the Query:\n\n*   **`SELECT c.customer_id, c.",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n### Explanation and Assumptions:\n\nThis query assumes you have at least two tables: `Customers` and `Orders`.\n\n1.  **`Customers` Table:**\n    *   Must contain customer identification information (e.g., `customer_id`, `customer_name`).\n2.  **`Orders` Table:**\n    *   Must contain order details, including a foreign key linking to the customer (`customer_id`).\n    *   It should also contain the necessary columns to calculate the value of an item in an order (e.g., `quantity` and `price`).\n\n### Breakdown of the Query:\n\n*   **`SELECT c.customer_id, c.",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n### Explanation and Assumptions:\n\nThis query assumes you have at least two tables: `Customers` and `Orders`.\n\n1.  **`Customers` Table:**\n    *   Must contain customer identification information (e.g., `customer_id`, `customer_name`).\n2.  **`Orders` Table:**\n    *   Must contain order details, including a foreign key linking to the customer (`customer_id`).\n    *   It should also contain the necessary columns to calculate the value of an item in an order (e.g., `quantity` and `price`).\n\n### Breakdown of the Query:\n\n*   **`SELECT c.customer_id, c."
+    ],
+    "interleaved": [
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using"
+    ],
+    "reload": [
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using",
+     "```sql\nSELECT\n    c.customer_id,\n    c.customer_name,  -- Assuming you have a customer_name column\n    SUM(o.quantity * o.price) AS total_order_value\nFROM\n    Customers c\nJOIN\n    Orders o ON c.customer_id = o.customer_id\nGROUP BY\n    c.customer_id, c.customer_name\nORDER BY\n    total_order_value DESC\nLIMIT 5;\n```\n\n**Explanation and Assumptions:**\n\n1. **Tables Assumed:**\n   * **`Customers`**: Contains customer information (e.g., `customer_id`, `customer_name`).\n   * **`Orders`**: Contains order details. This table is assumed to have the necessary columns to calculate the value.\n\n2. **Calculation Logic:**\n   * **`SUM(o.quantity * o.price)`**: This calculates the total value for each order item. We assume the `Orders` table (or a related line item table) has at least `quantity` and `price` columns.\n   * **`JOIN`**: We join `Customers` and `Orders` using"
+    ]
+   }
+  }
+ }
+}

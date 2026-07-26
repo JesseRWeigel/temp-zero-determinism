@@ -1,0 +1,12 @@
+math-04:
+  repeat       unique=2 groups=[[1, 2, 3, 4, 5], [0]]
+  interleaved  unique=1 groups=[[0, 1, 2, 3, 4, 5]]
+  reload       unique=1 groups=[[0, 1, 2, 3, 4, 5]]
+code-05:
+  repeat       unique=2 groups=[[1, 2, 3, 4, 5], [0]]
+  interleaved  unique=1 groups=[[0, 1, 2, 3, 4, 5]]
+  reload       unique=1 groups=[[0, 1, 2, 3, 4, 5]]
+
+wrote raw/mechanism.json
+
+READING: divergence appears when a cache can persist and vanishes when the model is evicted between calls. Prompt or KV caching is the cause.
