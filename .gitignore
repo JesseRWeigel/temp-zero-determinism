@@ -12,3 +12,8 @@ __pycache__/
 dist/
 build/
 .next/
+
+# llama.cpp build output, downloaded by the harness at run time. 82 MB of compiled binaries were
+# committed here by accident: 63 files against the project's own 14. Nothing in the code
+# references them, so they are downloaded rather than stored.
+.cache/
