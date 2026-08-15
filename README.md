@@ -2,6 +2,10 @@
 
 Temperature 0 is not reproducible, and the two backends tested fail for different reasons.
 
+> Measurements described here were taken on one development machine: an RTX 5090 with
+> 32 GB of VRAM, 12 cores, 48 GB of RAM, running Linux under WSL2. Numbers from your own
+> hardware will differ.
+
 Catalog task `EVAL-026`. 1,200 generations across two backends: a local model through
 Ollama and a hosted model through the Gemini API.
 
@@ -136,7 +140,7 @@ VERIFY OK
 ```
 
 `verify.sh` deliberately does **not** assert a particular divergence rate. Divergence is the
-measurement, so baking this machine's result into the test would make the suite fail
+measurement, so baking the development machine's result into the test would make the suite fail
 elsewhere for the right reason. What it asserts is that the harness runs, produces the
 documented schema, and that the detector actually detects divergence when handed divergent
 input, which a detector that always answered "identical" would fail.
